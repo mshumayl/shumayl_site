@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<br/>
+<!-- <div class="card p-1" style="max-width: 348px;">
+    <img class="w-100 rounded-top" src="" alt="">
+    <div class="p-5">
+      <h3 class="mb-3" style="font-size: 1.125rem;">Card title</h3>
+      <p class="mb-5">The quick brown fox jumps over the lazy dog.</p>
+      <a class="btn btn-lg btn-primary w-100" href="#">Go somewhere</a>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+
+        <div class="md:col-2">
+            <div class="sticky">
+                <!-- <div class="container"> -->
+                <br/><br/><br/>
+                <h6><a class="link-headings" href="{% url 'blog' %}"> Backpropagations </a></h6>
+                <!-- </div> -->
+                <div class="fs-1 fw-light text-wrap"><small>
+                    <strong>Backpropagations</strong> is a blog maintained by Shumayl Asmawi.
+                    This is where I write about my learnings in the fields of Applied Physics, Data Science, and Machine Learning.
+                </small></div><hr/>
+                <div class="sm:col-auto">
+                    <ul class="list-unstyled d-flex sm:justify-content-start">
+                      <li class="me-3">
+                        <a class="btn btn-auto d-inline-flex flex-shrink-0 align-items-center justify-content-center p-0 rounded" style="width: 2rem; height: 2rem;" href="https://twitter.com/home">
+                          <svg class="gi gi-twitter fs-3" width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.077 20c7.246 0 11.438-5.626 11.438-10.965 0-.147 1.03-1.03 1.47-2.874a.44.44 0 0 0-.617-.512c-.88.404-1.773.084-2.16-.376-1.492-1.627-3.987-1.705-5.574-.175-1.023.987-1.457 2.457-1.14 3.86-3.35.24-5.652-1.35-7.544-3.526-.244-.283-.697-.134-.748.24-.28 2.082-.368 7.144 4.648 10.05-.87 1.252-2.576 1.99-4.474 2.308-.42.07-.52.653-.136.84 1.504.74 3.157 1.127 4.837 1.125"/>
+                          </svg>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="btn btn-auto d-inline-flex flex-shrink-0 align-items-center justify-content-center p-0 rounded" style="width: 2rem; height: 2rem;" href="https://www.linkedin.com/in/shumayl-111/">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+        <div class="md:col-1">
+        </div>
+        <div class="md:col-8">
+            <div><small>Topics:&nbsp;&nbsp;</small>
+                {% for item in cat_menu %}  
+                <a href="{% url 'category' item|slugify %}"><button class="btn btn-sm btn-auto p-1 fw-light text-wrap" type="button"><small>&nbsp;{{ item }}&nbsp;</small></button>&nbsp;&nbsp;</a>
+                {% endfor %}
+
+            </div><br/>
+            <ul class="list-unstyled">
+                
+                <!-- <div class="row"> -->
+                    {% for post in object_list %}
+
+                        <a href="{% url 'article-details' post.pk %}">
+                            <div class="card p-0" data-aos="fade-up" data-aos-duration="800" style="max-width: 900;">
+                                <!-- <div class="container"> -->
+                                    {% if post.header_image %}
+                                    <!-- The following line limits the height to 300, but stretches it in return -->
+                                        <img class="w-100 rounded-top" src="{{ post.header_image.url }}"></img>
+                                    {% endif %} 
+                                    <div class="p-4">                                   
+                                    <li><br/><h4><a class="link-headings" href="{% url 'article-details' post.pk %}">{{ post.title }}</a></h4>
+                                        by <strong> {{ post.author.first_name }} {{ post.author.last_name }} </strong> on {{ post.post_date|date:"M d, Y" }}
+                                    
+                                    <small>    
+                                        {% if user.is_superuser %}
+                                            —<a href="{% url 'update_post' post.pk %}"> Edit</a> | 
+                                            <a href="{% url 'delete_post' post.pk %}">Delete</a>
+                                        {% endif %}
+                                        <br/>
+                                        <i><a class="link-body" href="{% url 'category' post.category|slugify %}">{{ post.category }}</a></i> 
+                                    </small></li>
+                                    
+                                
+                                <!-- {{ date_added }}<br/> -->
+                                    <br/>
+                                        <a class="link-body" href="{% url 'article-details' post.pk %}" >{{ post.snippet }}</a>
+                                    </div>   
+                                <!-- {{ post.body|slice:":100"|safe }}<a> . . .</a> -->
+                                <!-- </div> -->
+                                <br/>  
+                            </div>
+                        </a>
+
+                        <br/>
+                    {% endfor %}
+                <!-- </div> -->
+                <br/>
+                <br/>
+            </ul>
+        </div>
+        <!-- <div class="md:col-4">
+        </div> -->
+    </div>
+</div>
+
+
+{% endblock %}

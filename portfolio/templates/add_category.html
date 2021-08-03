@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+{% if user.is_superuser %}
+
+    <h1> Create a New Category </h1>
+    <hr />
+    <div class="container-fluid">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-control form-control-sm" type="text" aria-label=".form-control-sm example"></div>
+            <br/>
+        <button class='btn btn-auto'>Create!</button>
+    </div>
+
+{% else %}
+
+    <div class="d-flex align-items-center p-3 text-white bg-danger rounded" role="alert">
+        <p class="text-truncate"><strong>401 ACCESS DENIED</strong> You are not authorized to be here. This behaviour has been logged. </p>
+    </div>
+
+{% endif %}
+
+{% endblock %}
+</div>

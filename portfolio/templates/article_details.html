@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="md:col-3">
+        </div>
+        <div class="md:col-6">
+            <div class="container card p-5" data-aos="fade-right" data-aos-duration="500">
+            <h1>{{ post.title }}</h1>
+            <small> 
+                <strong>{{ post.author.first_name }} {{ post.author.last_name }}</strong> | 
+                {{ post.post_date|date:"M d, Y" }} 
+                {% if user.is_superuser %}
+                    —<a href="{% url 'update_post' post.pk %}"> Edit</a> |
+                    <a href="{% url 'delete_post' post.pk %}"> Delete</a>
+                {% endif %}
+            </small><br/>
+            <hr>
+
+            {% if post.header_image %}
+                <img class="w-100 rounded mw-100 h-auto" src="{{ post.header_image.url }}">
+            {% endif %}
+
+            <br/>
+            <br/>
+            {{ post.body|safe }}
+
+            <br/>
+            <br/>
+
+            <a href="{% url 'blog' %}" class="btn btn-auto">Back</a>
+
+            </div>
+        </div>
+        <div class="md:col-3">
+        </div>
+</div>
+</div>
+<br/>
+
+{% endblock %}

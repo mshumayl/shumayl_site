@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title  %} Login {% endblock %}
+{% block content %}
+
+<h1> Login to your account </h1>
+<hr />
+<div class="container-fluid">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-control form-control-sm" type="text" aria-label=".form-control-sm example"></div>
+        <br/>
+    <button class='btn btn-auto'>Login!</button>
+    
+</div>
+{% endblock %}
+
