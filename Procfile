@@ -1,0 +1,1 @@
+web: gunicorn shumayl_site.wsgi
