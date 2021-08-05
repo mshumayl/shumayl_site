@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
-import requests
 
 # Create your views here.
 # def home(request):
