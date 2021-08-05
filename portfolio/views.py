@@ -18,7 +18,7 @@ class BlogView(ListView):
     template_name = 'blog.html'
     
     cats = []
-    cats = Category.objects.all()
+    # cats = Category.objects.all()
     ordering = ['-post_date']
     
     def get_context_data(self, *args, **kwargs):
