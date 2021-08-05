@@ -7,14 +7,6 @@ import datetime
 
 # Create your models here.
 
-class Category(models.Model):
-    name = models.CharField(max_length=255)
-    
-    def __str__(self):
-        return self.name
-    
-    def get_absolute_url(self):
-        return reverse('blog')
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
@@ -26,8 +18,6 @@ class Post(models.Model):
     category = models.CharField(max_length=255, default='Uncategorized')
     snippet = models.CharField(max_length=255)
     
-    
-    
     def __str__(self):
         return self.title + ' | ' + str(self.author)
     
@@ -35,4 +25,12 @@ class Post(models.Model):
         return reverse('blog')
         # return reverse('article-details', args=(str(self.id)))
     
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse('blog')
 
