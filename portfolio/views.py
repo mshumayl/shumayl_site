@@ -16,6 +16,8 @@ class HomeView(ListView):
 class BlogView(ListView):
     model = Post
     template_name = 'blog.html'
+    
+    cats = []
     cats = Category.objects.all()
     ordering = ['-post_date']
     
