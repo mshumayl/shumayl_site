@@ -1,14 +1,6 @@
 from django import forms 
 from .models import Post, Category
 
-#QuerySet object - selection for category
-choices = Category.objects.all().values_list('name', 'name')
-
-#Fill QuerySet object into a Python list
-choice_list = []
-for item in choices:
-    choice_list.append(item)
-
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -34,4 +26,11 @@ class EditForm(forms.ModelForm):
             'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Edit your content'}),
             'snippet': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Provide a snippet for your post'}),
         }
-        
+
+#QuerySet object - selection for category
+choices = Category.objects.all().values_list('name', 'name')
+
+#Fill QuerySet object into a Python list
+choice_list = []
+for item in choices:
+    choice_list.append(item)
