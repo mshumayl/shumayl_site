@@ -1,6 +1,6 @@
 from django import forms 
 from .models import Post
-from .models import Category
+# from .models import Category
 
 # #QuerySet object - selection for category
 # choices = Category.objects.all().values_list('name', 'name')
@@ -33,7 +33,7 @@ class EditForm(forms.ModelForm):
         
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Edit your title here'}),
-            'category': forms.Select(choices=choice_list, attrs={'class': 'form-control', 'placeholder': 'Select a tag'}),
+            # 'category': forms.Select(choices=choice_list, attrs={'class': 'form-control', 'placeholder': 'Select a tag'}),
             'body': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Edit your content'}),
             'snippet': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Provide a snippet for your post'}),
         }
