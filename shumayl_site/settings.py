@@ -141,3 +141,6 @@ LOGIN_REDIRECT_URL = 'blog'
 LOGOUT_REDIRECT_URL = 'blog'
 
 django_heroku.settings(locals())
+
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
