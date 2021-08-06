@@ -241,6 +241,10 @@ CKEDITOR_CONFIGS = {
         # 'filebrowserWindowHeight': 725,
         # 'filebrowserWindowWidth': 940,
         # 'toolbarCanCollapse': True,
+        
+        # Class used inside span to render mathematical formulae using latex
+        'mathJaxClass': 'mathjax-latex',
+        # Mathjax library link to be used to render mathematical formulae
         'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
         'tabSpaces': 4,
         'extraPlugins': ','.join([
