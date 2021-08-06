@@ -263,6 +263,7 @@ CKEDITOR_CONFIGS = {
             'widget',
             'lineutils',
             'clipboard',
+            'codesnippet',
             'dialog',
             'dialogui',
             'elementspath'
