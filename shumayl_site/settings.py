@@ -244,8 +244,10 @@ CKEDITOR_CONFIGS = {
         
         # Class used inside span to render mathematical formulae using latex
         'mathJaxClass': 'mathjax-latex',
+        
         # Mathjax library link to be used to render mathematical formulae
         'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
+        
         'tabSpaces': 4,
         'extraPlugins': ','.join([
             'uploadimage', # the upload image feature
