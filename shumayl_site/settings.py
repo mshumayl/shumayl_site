@@ -127,6 +127,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor"
+
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 # CKEDITOR_CONFIGS = {
 #     'default': {
