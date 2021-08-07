@@ -18,7 +18,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255)
     # header_image = models.ImageField(null=True, blank=True, upload_to='images/')
-    header_image = models.CharField(max_length=1000, default='EmptyText')
+    header_image = models.TextField(max_length=500, default='EmptyText')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
     # body = models.TextField()
