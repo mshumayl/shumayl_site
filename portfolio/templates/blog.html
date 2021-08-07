@@ -69,13 +69,16 @@
                         <a href="{% url 'article-details' post.pk %}">
                             <div class="card p-0" data-aos="fade-up" data-aos-duration="800" style="max-width: 900;">
                                 <!-- <div class="container"> -->
-                                    {% if post.header_image %}
-                                    <!-- The following line limits the height to 300, but stretches it in return -->
+                                    <!-- {% if post.header_image %}
                                         <img class="w-100 rounded-top" src="{{ post.header_image.url }}"></img>
-                                    {% endif %} 
+                                    {% endif %}  -->
+
+                                    <!-- Header image in HTML -->
+                                    <img class="w-100 rounded-right" href="{% url 'article-details' post.pk %}" >{{ post.header_image|safe }}</img>
+                                    
                                     <div class="p-4">                                   
                                     <li><br/><h4><a class="link-headings" href="{% url 'article-details' post.pk %}">{{ post.title }}</a></h4>
-                                        by <strong> {{ post.author.first_name }} {{ post.author.last_name }} </strong> on {{ post.post_date|date:"M d, Y" }}
+                                        <small>by <strong> {{ post.author.first_name }} {{ post.author.last_name }} </strong> on {{ post.post_date|date:"M d, Y" }}</small>
                                     
                                     <small>    
                                         {% if user.is_superuser %}
