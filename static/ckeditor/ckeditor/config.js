@@ -7,7 +7,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
-};
+
 
 // If you want inserted images in a CKEditor to be responsive
 // you can use the following code. It creates a htmlfilter for the
@@ -55,3 +55,5 @@ CKEDITOR.on('instanceReady', function (ev) {
         }
     });
 });
+
+};
