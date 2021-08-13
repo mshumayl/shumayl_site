@@ -77,7 +77,8 @@
 
 <nav class="navbar xl:navbar-expand" style="border-radius: .75rem;">
     <div class="logo container xl:px-4">
-      <a class="link-body me-5" href="{% url 'home' %}">
+      <!-- Can put about here -->
+      <a class="link-body me-5" href="{% url 'home' %}"> 
         <img width="50rem" height="50rem" viewBox="0 0 24 24" fill="currentColor" src="{% static 'portfolio/assets/img/SA-white-header.svg' %}">
       </img>
       </a>
@@ -89,7 +90,7 @@
       <div class="collapse navbar-collapse xl:flex-grow-1" id="navbarSupportedContent">
         <ul class="navbar-nav mb-5 xl:me-auto xl:mb-0">
             <li class="nav-item">
-                <a class="link-headings" href="{% url 'blog' %}" aria-current="page">Backpropagations</a>
+                <a class="link-headings" href="{% url 'home' %}" aria-current="page">Backpropagations</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="{% url 'home' %}">Shumayl Asmawi</a>

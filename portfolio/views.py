@@ -8,9 +8,9 @@ from django.urls import reverse_lazy
 # def home(request):
 #     return render(request, 'home.html', {})
 
-class HomeView(ListView):
-    model = Post
-    template_name = 'home.html'
+# class HomeView(ListView):
+#     model = Post
+#     template_name = 'home.html'
     
     
 class BlogView(ListView):
@@ -56,7 +56,7 @@ class UpdatePostView(UpdateView):
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
-    success_url = reverse_lazy('blog')
+    success_url = reverse_lazy('home')
 
 # class BlogDetailsView(DetailView):
 #     posts = Post.objects.all()

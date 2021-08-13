@@ -13,7 +13,7 @@ class Category(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('blog')
+        return reverse('home')
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
@@ -30,7 +30,7 @@ class Post(models.Model):
         return self.title + ' | ' + str(self.author)
     
     def get_absolute_url(self):
-        return reverse('blog')
+        return reverse('home')
         # return reverse('article-details', args=(str(self.id)))
     
 

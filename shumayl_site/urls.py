@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls')),
-    path('blog/members/', include('django.contrib.auth.urls')), #django will try to use auth URLs first
-    path('blog/members/', include('members.urls')), #when django sees something else, it will redirect to members.urls that are listed
+    path('members/', include('django.contrib.auth.urls')), #django will try to use auth URLs first
+    path('members/', include('members.urls')), #when django sees something else, it will redirect to members.urls that are listed
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #For uploading media -- refer Codemy Django Blog #26
