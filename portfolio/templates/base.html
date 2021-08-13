@@ -16,7 +16,9 @@
   <!-- <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet"> -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  
+
+  <!-- Hero -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
 
   <link rel="stylesheet" type="text/css" href="{% static 'portfolio/assets/css/main.css' %}">
 
@@ -33,13 +35,43 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.1/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
-<!-- Embedded CSS -->
+<!-- Internal CSS -->
   <style>
     div.sticky {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
   }
+
+  /* from codepen */
+  html,body {
+  font-family: 'Raleway', sans-serif;
+  }
+
+  h1,h2 {
+    font-weight: 200;
+    margin: 0.4em 0;
+  }
+  h1 { font-size: 3.5em; }
+  h2 {
+    color: #888;
+    font-size: 2em;
+  }
+  /* .jumbotron{
+    background: url("https://i.ibb.co/PMGzWBD/pexels-vitaly-vlasov-1570099.jpg") no-repeat center center; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+  }
+  .push-spaces
+  {
+    height: 100px;
+  } */
+  /* .jumbotron {
+  background-image: url("https://i.ibb.co/PMGzWBD/pexels-vitaly-vlasov-1570099.jpg");
+  background-size: cover;
+  } */
   </style>
 </head>
 
@@ -227,5 +259,5 @@
 </body>
 </html>
 
-
+<script type="text/javascript" src="{% static 'portfolio/assets/js/shumayl.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/gh/yanchokraev/grayshift@1.0.2/dist/js/grayshift.min.js" integrity="sha384-8jCLciEK/63juoJgc5SxCqHbZwhVfEQb7TUYSdbDrZV97ozI9/UBWCvr9O8r8JJT" crossorigin="anonymous"></script>

@@ -65,7 +65,7 @@
                                 <div class="card p-2" data-aos="fade-up" data-aos-duration="800" style="max-width: 900;">
                                     <div class="container">
                                         <li><br/><h4><a class="link-headings" href="{% url 'article-details' post.pk %}">{{ post.title }}</a></h4>
-                                            by <strong> {{ post.author.first_name }} {{ post.author.last_name }} </strong> on {{ post.post_date }}
+                                            by <strong> {{ post.author.first_name }} {{ post.author.last_name }} </strong> on {{ post.post_date|date:"M d, Y" }}
                                         
                                         <small>    
                                             {% if user.is_superuser %}
