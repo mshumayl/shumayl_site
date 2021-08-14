@@ -9,6 +9,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.uiColor = '#AADC6E';
 
 
+
 // If you want inserted images in a CKEditor to be responsive
 // you can use the following code. It creates a htmlfilter for the
 // image tag that replaces inline "width" and "style" definitions with
@@ -56,4 +57,6 @@ CKEDITOR.on('instanceReady', function (ev) {
     });
 });
 
+
 };
+
