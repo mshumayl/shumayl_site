@@ -17,16 +17,13 @@
   <!-- Twitter meta tags -->
   
   {% if post.pk %}
+    <title>{{post.title}}</title>
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:title" content="{{ post.title }}">
-    
-    <meta property="og:description" content="{% if post.snippet %}{{post.snippet|striptags|truncatechars:160}}{% else %}
-    {{post.body|safe|striptags|truncatechars:160}}{% endif %}">
-    
+    <meta property="og:description" content="{% if post.snippet %}{{post.snippet|striptags|truncatechars:160}}{% else %}{{post.body|safe|striptags|truncatechars:160}}{% endif %}">
     <meta property="og:image" content="{% static 'portfolio/assets/img/SA-twitter-card.jpg' %}">
     <meta property="og:url" content="{% url 'article-details' post.pk %}" >
 
-    <title>{{post.title}}</title>
   {% else %}
     <title>Backpropagations</title>
     <meta name="twitter:card" content="summary_large_image" />   
