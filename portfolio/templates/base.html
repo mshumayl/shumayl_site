@@ -13,6 +13,34 @@
       Backpropagations
     {% endblock %}
   </title>
+
+  <!-- Twitter meta tags -->
+
+  {% if post.pk in request.path %}
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:url" content="http://shumayl.com/{{post.pk}}" >
+
+    <meta property="og:description" content="{% if post.snippet %}{{post.snippet|striptags|truncatechars:160}}{% else %}
+    {{post.body|safe|striptags|truncatechars:160}}{% endif %}">
+
+    <meta property="og:image" content="{% static 'portfolio/assets/img/SA-twitter-card.jpg' %}">
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{{post.title}}</title>
+  {% else %}
+    <title>Backpropagations</title>
+    <meta property="og:title" content="Backpropagations">
+    <meta property="og:description" content="Backpropagations is a blog maintained by Shumayl Asmawi, which covers topics on Applied Physics, Data Science, and Machine Learning.">
+    <meta property="og:image" content="{% static 'portfolio/assets/img/SA-twitter-card.jpg' %}">
+    <meta property="og:url" content="http://shumayl.com" >
+
+    <meta name="twitter:card" content="summary_large_image" />   
+
+  {% endif %}
+    <meta name="twitter:site" content="Shumayl Asmawi" />
+    <meta name="twitter:creator" content="@Shumayl_" /> 
+
+  <!-- HTTP Requests -->
   <link href="{% static 'portfolio/assets/img/favicon.png' %}" rel="icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yanchokraev/grayshift@1.0.2/dist/css/grayshift.min.css" integrity="sha384-BEz3swSE9zJc0Sejcc2Hzrbjq8/0rFfS2ASsVlVM1F3cdbXW2VYMlhod3OZr1k3M" crossorigin="anonymous">
   
