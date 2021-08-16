@@ -16,12 +16,12 @@
 
   <!-- Twitter meta tags -->
 
-  {% if post.pk in request.path %}
-    <meta property="og:title" content="{{ post.title }}">
-    <meta property="og:url" content="http://shumayl.com/{{post.pk}}" >
+  {% if object.pk in request.path %}
+    <meta property="og:title" content="{{ object.title }}">
+    <meta property="og:url" content="http://shumayl.com/article/{{object.pk}}" >
 
-    <meta property="og:description" content="{% if post.snippet %}{{post.snippet|striptags|truncatechars:160}}{% else %}
-    {{post.body|safe|striptags|truncatechars:160}}{% endif %}">
+    <meta property="og:description" content="{% if object.snippet %}{{object.snippet|striptags|truncatechars:160}}{% else %}
+    {{object.body|safe|striptags|truncatechars:160}}{% endif %}">
 
     <meta property="og:image" content="{% static 'portfolio/assets/img/SA-twitter-card.jpg' %}">
 
