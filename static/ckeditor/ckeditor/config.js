@@ -8,7 +8,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 
-
+CKEDITOR.config.codeSnippet_theme = 'monokai_sublime';
 
 // If you want inserted images in a CKEditor to be responsive
 // you can use the following code. It creates a htmlfilter for the
