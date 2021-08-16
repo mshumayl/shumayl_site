@@ -17,24 +17,24 @@
   <!-- Twitter meta tags -->
 
   {% if object.pk in request.path %}
+    <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:title" content="{{ object.title }}">
-    <meta property="og:url" content="http://shumayl.com/article/{{object.pk}}" >
-
+    
     <meta property="og:description" content="{% if object.snippet %}{{object.snippet|striptags|truncatechars:160}}{% else %}
     {{object.body|safe|striptags|truncatechars:160}}{% endif %}">
+    
+    <meta property="og:image" content="{% static 'portfolio/assets/img/favicon.png' %}">
+    <meta property="og:url" content="http://shumayl.com/article/{{object.pk}}" >
 
-    <meta property="og:image" content="{% static 'portfolio/assets/img/SA-twitter-card.jpg' %}">
-
-    <meta name="twitter:card" content="summary_large_image" />
     <title>{{post.title}}</title>
   {% else %}
     <title>Backpropagations</title>
+    <meta name="twitter:card" content="summary_large_image" />   
     <meta property="og:title" content="Backpropagations">
     <meta property="og:description" content="Backpropagations is a blog maintained by Shumayl Asmawi, which covers topics on Applied Physics, Data Science, and Machine Learning.">
-    <meta property="og:image" content="{% static 'portfolio/assets/img/SA-twitter-card.jpg' %}">
+    <meta property="og:image" content="{% static 'portfolio/assets/img/favicon.png' %}">
     <meta property="og:url" content="http://shumayl.com" >
 
-    <meta name="twitter:card" content="summary_large_image" />   
 
   {% endif %}
     <meta name="twitter:site" content="Shumayl Asmawi" />
